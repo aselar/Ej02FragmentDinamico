@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lista_enlaces_tutoriales_Android">
+        <item>Tutorial Sgoliver</item>
+        <item>Hermosa programacion</item>
+    </string-array>
+
+    <string-array name="urls_enlaces_tutoriales_Android">
+        <item>http://www.sgoliver.net/blog/curso-de-programacion-android/indice-de-contenidos/</item>
+        <item>http://www.hermosaprogramacion.com/android/</item>
+    </string-array>
+
+</resources>
