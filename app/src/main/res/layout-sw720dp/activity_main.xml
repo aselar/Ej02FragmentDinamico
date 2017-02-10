@@ -5,16 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <fragment
-        android:id="@+id/listFragment"
-        android:name="com.android.asel.ej02fragmentdinamico.LinkListFragment"
+    <FrameLayout
+        android:id="@+id/listFragmentContenedor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
-    <fragment
-        android:id="@+id/webFragment"
-        android:name="com.android.asel.ej02fragmentdinamico.WebViewFragment"
+    <FrameLayout
+        android:id="@+id/webFragmentContenedor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2" />

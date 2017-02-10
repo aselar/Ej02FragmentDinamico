@@ -1,8 +1,11 @@
 package com.android.asel.ej02fragmentdinamico;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,10 @@ public class MainActivity extends AppCompatActivity implements LinkListFragment.
     public static ArrayList<TutorialAndroid> listaTutoriales = new ArrayList<TutorialAndroid>();
     public static String []titulos;
     public static String []enlaces;
+
+    private FrameLayout listFragmentContenedor, webFragmentContenedor;
+    private FragmentManager fragmentManager;
+
     private WebViewFragment wVFragment;
 
     @Override
@@ -19,6 +26,13 @@ public class MainActivity extends AppCompatActivity implements LinkListFragment.
         setContentView(R.layout.activity_main);
 
         cargarDatos();
+
+        //crear el fragment listado
+        fragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.add(R.id.listFragmentContenedor, new LinkListFragment());
+        ft.commit();
+
     }
 
     private void cargarDatos() {
@@ -37,15 +51,28 @@ public class MainActivity extends AppCompatActivity implements LinkListFragment.
 
         String url = listaTutoriales.get(pos).getEnlaceContenido();
 
-        wVFragment = (WebViewFragment) getSupportFragmentManager().findFragmentById(R.id.webFragment);
+        webFragmentContenedor=(FrameLayout)findViewById(R.id.webFragmentContenedor);
 
-        if (wVFragment == null) {
-
+        if (webFragmentContenedor == null) {
+            //dispositivo pequeño
             Intent i = new Intent(this, SegundaActivity.class);
             i.putExtra("enlace", url);
             startActivity(i);
 
         } else {
+            //dispositivo grande
+            if (wVFragment == null) {
+                wVFragment = new WebViewFragment();
+            }
+
+            if (!wVFragment.isAdded()) {
+
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.add(R.id.webFragmentContenedor, wVFragment);
+                ft.addToBackStack(null);
+                ft.commit();
+
+            }
 
             if(!wVFragment.getActualUrl().equals(url))
                 wVFragment.mostrarUrl(url);
