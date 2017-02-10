@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.android.asel.ej01listfragmentweb.LinkListFragment"
+        android:name="com.android.asel.ej02fragmentdinamico.LinkListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

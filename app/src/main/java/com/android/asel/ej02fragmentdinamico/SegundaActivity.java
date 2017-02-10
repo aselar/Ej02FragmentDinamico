@@ -1,4 +1,4 @@
-package com.android.asel.ej01listfragmentweb;
+package com.android.asel.ej02fragmentdinamico;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

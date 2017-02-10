@@ -1,4 +1,4 @@
-package com.android.asel.ej01listfragmentweb;
+package com.android.asel.ej02fragmentdinamico;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

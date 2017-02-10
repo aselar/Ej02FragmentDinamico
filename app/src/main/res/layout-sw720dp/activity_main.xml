@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.android.asel.ej01listfragmentweb.LinkListFragment"
+        android:name="com.android.asel.ej02fragmentdinamico.LinkListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <fragment
         android:id="@+id/webFragment"
-        android:name="com.android.asel.ej01listfragmentweb.WebViewFragment"
+        android:name="com.android.asel.ej02fragmentdinamico.WebViewFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2" />

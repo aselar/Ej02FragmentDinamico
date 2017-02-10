@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Ej01ListFragmentWeb.iml" filepath="$PROJECT_DIR$/Ej01ListFragmentWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ej02FragmentDinamico.iml" filepath="$PROJECT_DIR$/Ej02FragmentDinamico.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

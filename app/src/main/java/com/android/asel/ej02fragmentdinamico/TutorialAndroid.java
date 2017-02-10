@@ -1,4 +1,4 @@
-package com.android.asel.ej01listfragmentweb;
+package com.android.asel.ej02fragmentdinamico;
 
 /**
  * Created by aselr on 02/02/2017.
