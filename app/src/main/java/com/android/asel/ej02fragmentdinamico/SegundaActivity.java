@@ -24,7 +24,7 @@ public class SegundaActivity extends AppCompatActivity {
 
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.add(R.id.webFragmentContenedor, wVFragment);
-            ft.addToBackStack(null);
+            getSupportFragmentManager().executePendingTransactions();
             ft.commit();
 
         }

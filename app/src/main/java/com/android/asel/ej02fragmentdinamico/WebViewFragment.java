@@ -36,9 +36,26 @@ public class WebViewFragment extends Fragment {
     public WebViewFragment() {
     }
 
+    public static WebViewFragment newInstance(String url) {
+        WebViewFragment fragment = new WebViewFragment();
+        if (url != null) {
+
+            Bundle args = new Bundle();
+            args.putString("URL_SELECCIONADA", url);
+            fragment.setArguments(args);
+        }
+        return fragment;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle args=getArguments();
+        if (args!=null) {
+            actualUrl=args.getString("URL_SELECCIONADA");
+        }
+
     }
 
     @Nullable
@@ -46,6 +63,12 @@ public class WebViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.webviewfragment_layout, container, false);
         webView = (WebView) v.findViewById(R.id.WebViewPage);
+
+        if (webView != null) {
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.loadUrl(actualUrl);
+        }
+
         return v;
     }
 
